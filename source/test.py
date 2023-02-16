@@ -13,7 +13,7 @@ endpoint_name = f"{stack_name}-{commit_id[:7]}"
 
 runtime = boto3.client("runtime.sagemaker")
 
-IMAGE_URL = "https://raw.githubusercontent.com/austinlasseter/aws-mlops-mnist/main/data/mnist_7.png"
+IMAGE_URL = "https://raw.githubusercontent.com/austinlasseter/aws-mlops-mnist/main/data/mnist_5.png"
 test_file = "test.jpg"
 wget.download(
     IMAGE_URL,
@@ -38,7 +38,7 @@ np_result = np.asarray(result)
 prediction = np_result.argmax(axis=1)[0]
 print(f"This is your number: {prediction}")
 
-if prediction != 7:
+if prediction != 5:
     print("Model prediction failed.")
     # sys.exit(1)
 
